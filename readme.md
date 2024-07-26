@@ -1,8 +1,9 @@
-# Azure-OpenAI-Whisper-TTS-Sample
+# Ask-with-voice
 
-This is an simple app to help demo a TTS service from Azure OpenAI using streamlit
+This is an simple app to help demo a whisper, GPT, TTS service from Azure OpenAI using streamlit
 
 ## Requiremnets
+
 - python 3.11 or above.
 
 ## Before Starting
@@ -12,11 +13,15 @@ This is an simple app to help demo a TTS service from Azure OpenAI using streaml
 3. Prep the env file: Change the name of `env.sample` file to `.env`.
 4. Configure the Environment Variable: Fill in the `.env` file with appropriate values.
 5. Start the application: `streamlit run main.py`
-6. Optional: change `aoai_tts_voice_name` variable inside `main.py` to change the voice profile.
+6. Optional:
+    - change the `silence_threshold` variable inside `services/record_audio.py` to change the threshold for stop recording.
+    - change the `default_system_message` variable inside `services/aoai_gpt.py` to change the system prompt.
 
 ## Usage
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+- click on the mic button and begin speaking when `listening` text shows up
+- stay silent will stop the recording, and begin transcribing the audio
+- it will then ask the GPT for answer and respond in text + audio.
 
 ## Contributing
 
