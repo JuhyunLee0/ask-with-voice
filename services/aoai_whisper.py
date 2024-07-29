@@ -12,7 +12,6 @@ client = AzureOpenAI(
 )
     
 def transcribe_audio(audio_buffer):
-    print(type(audio_buffer))
 
     response = client.audio.transcriptions.create(
         file=audio_buffer,            
